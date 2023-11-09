@@ -30,7 +30,7 @@ const main = () => {
         const mainComponent = elem;
         const storiesComponent = mainComponent.children[1];
 
-        storiesComponent.remove();
+        if (storiesComponent) storiesComponent.remove();
     });
 };
 
