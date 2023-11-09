@@ -35,7 +35,7 @@ const main = () => {
 };
 
 const isFacebookUrl = (url) => {
-    const regex = /https:\/\/facebook\.com\/.*/;
+    const regex = /\.*.facebook.com\.*/;
     return regex.test(url);
 };
 
