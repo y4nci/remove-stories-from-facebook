@@ -28,9 +28,12 @@ const main = () => {
 
     waitForComponent('div[role="main"]>div>div>div').then(elem => {
         const mainComponent = elem;
-        const storiesComponent = mainComponent.children[1];
 
-        if (storiesComponent) storiesComponent.remove();
+        if (mainComponent != null) {
+            const storiesComponent = mainComponent.children[1];
+
+            if (storiesComponent) storiesComponent.remove();
+        }
     });
 };
 
@@ -44,7 +47,7 @@ const injectScript = (func=main) => chrome.scripting.executeScript({
         tabId: tabID,
         allFrames: true
     },
-    function: func
+    function: func,
 });
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
