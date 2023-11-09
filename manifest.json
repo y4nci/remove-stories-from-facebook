@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Remove Stories from Facebook",
+    "version": "0.1",
+    "author": "Baran Yancı",
+    "description": "A simple Chrome extension to remove stories from Facebook.",
+    "host_permissions": [
+        "*://*.facebook.com/*"
+    ],
+    "web_accessible_resources": [{
+        "resources": ["/images/*"], 
+        "matches": ["*://*.facebook.com/*"]
+    }],
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/icons/default16.png",
+            "32": "images/icons/default32.png"
+        },
+        "default_title": "Remove Stories from Facebook",
+        "theme_icons": [{
+            "light": "images/icons/default16.png",
+            "dark": "images/icons/default16.png",
+            "size": 16
+        },
+        {
+            "light": "images/icons/default32.png",
+            "dark": "images/icons/default32.png",
+            "size": 32
+        }]
+    }
+}
+  
